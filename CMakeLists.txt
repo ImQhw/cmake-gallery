@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 
 project(cmake-gallery)
 
+if(MSVC) # build shared dll on windows
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+    set(BUILD_SHARED_LIBS TRUE)
+endif()
+
 set(USR_CMAKE_DIR ${PROJECT_SOURCE_DIR}/cmake)
 
 include (${USR_CMAKE_DIR}/asio.cmake)
