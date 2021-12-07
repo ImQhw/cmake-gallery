@@ -31,3 +31,5 @@ target_link_libraries(a.out
         nlohmann_json::nlohmann_json
         ur_rtde::rtde
 )
+
+add_subdirectory(hello)
