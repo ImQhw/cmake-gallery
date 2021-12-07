@@ -6,13 +6,14 @@ set(Boost_USE_STATIC_LIBS ON)
 
 endif()
 
-set(PYTHON_BINDINGS OFF CACHE INTERNAL "Turn off Python binding")
-
 include(FetchContent)
 FetchContent_Declare(
     ur_rtde 
     GIT_REPOSITORY https://gitlab.com/sdurobotics/ur_rtde.git
     GIT_TAG v1.4.5
 )
+
+# set options for build target
+set(PYTHON_BINDINGS OFF CACHE INTERNAL "Turn off Python binding")
 
 FetchContent_MakeAvailable(ur_rtde)
