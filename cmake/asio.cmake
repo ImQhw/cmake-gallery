@@ -1,15 +1,9 @@
+find_package(Threads REQUIRED)
 
 set(ASIO_VERSION 1-21-0)
 
-include(FetchContent)
-
-FetchContent_Declare(
-    asio 
-    GIT_REPOSITORY https://github.com/chriskohlhoff/asio.git
-    GIT_TAG asio-${ASIO_VERSION}
-)
-
-FetchContent_MakeAvailable(asio)
+include(${PROJECT_SOURCE_DIR}/cmake/CPM.cmake)
+CPMAddPackage("https://github.com/chriskohlhoff/asio.git#asio-${ASIO_VERSION}")
 
 # ASIO doesn't use CMake, we have to configure it manually. Extra notes for using on Windows:
 #
